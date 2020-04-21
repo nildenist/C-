@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int aydakigun(int, int);
+
+main()
+{
+  int gun,ay, yil;
+  int i, j ;
+
+  clrscr();
+  printf("Bu yılki tarihi giriniz (G A Y) : ");
+  scanf("%d %d %d",&gun, &ay, &yil);
+  yil = yil + 1;
+  gun = gun - 11;
+  if (gun < 1 ) {
+     ay = ay - 1;
+     if (ay < 1 ) {
+        ay = 12;
+        yil = yil - 1 ;
+     }
+     gun = gun + aydakigun(ay, yil);
+  }
+  printf("\nGelecek bayram = %d/%d/%d\n",gun,ay,yil);
+}
